@@ -1,0 +1,28 @@
+input
+{
+    display: block;
+}
+
+.afftweet
+{
+    border: solid 2px;
+    width: 50%;
+
+}
+
+.affprofil
+{
+    font-size: medium;
+    border-bottom: solid 1px;
+    text-align: left;
+}
+.message
+{
+    text-align: center;
+}
+.horaire
+{
+    border-top: solid 1px;
+    font-size: small;
+    text-align: right;
+}
