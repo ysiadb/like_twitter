@@ -9,15 +9,15 @@ session_start();
             
             if(!empty($connect) AND !empty($pseudo))
             {
-                $connexion = $PDO->prepare("SELECT * FROM membre WHERE prenom='$connect' AND pseudo='$pseudo'");
+                $connexion = $PDO->prepare("SELECT * FROM user WHERE name='$connect' AND pseudo='$pseudo'");
                 $connexion->execute();
                 $membre_exist = $connexion->rowCount();
             
                 if($membre_exist == 1)
                 {
                     $membre_exist = $connexion->fetch();
-                    $_SESSION['id_membre'] = $membre_exist['id_membre'];
-                    $_SESSION['prenom'] = $membre_exist['prenom'];
+                    $_SESSION['id_user'] = $membre_exist['id_user'];
+                    $_SESSION['name'] = $membre_exist['name'];
                     $_SESSION['pseudo'] = $membre_exist['pseudo'];
                     header("Location: profil.php");
                 }

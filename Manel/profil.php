@@ -17,13 +17,20 @@ session_start();
         <div class="profil">
             <h2>Bienvenue <?php echo $_SESSION["pseudo"]; ?> </h2>
             <br/>
+
+            <form action="profil_search.php" method="post">
+            <input type="text" name="search" placeholder="Recherche"></input>
+            <input type="submit" name="recherche" value="Recherche"></input>
+            <?php include ("recherche.php");?>
+            </form>
+            
             <h3>Tweet</h3>
-            <form action="" name="twitter" method="post">
-                <button>S'abonner</button>
+            <form enctype="multipart/form-data" action="" name="twitter" method="post">
                 <br/>
                 <textarea id="tweet" placeholder="Votre message ..." name="tweet" rows="10" cols="50"></textarea>
                 <br/><br/>
-                <input type="submit" name="envoyer" value="Envoyer">
+                <input type="file" name="photo"/>
+                <input type="submit" name="envoyer" value="Envoyer"/>
                 <br/><br/>
                 <?php include ("poo_tweet.php");?>
             </form>
