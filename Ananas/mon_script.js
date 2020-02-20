@@ -2,7 +2,7 @@ $('#envoi').click(function(e){
     e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
 
     var pseudo = encodeURIComponent( $('#pseudo').val() ); // on sécurise les données
-    var message = encodeURIComponent( $('#message').val() );
+    var message = decodeURI( $('#message').val() );
 
     if(pseudo != "" && message != ""){ // on vérifie que les variables ne sont pas vides
         $.ajax({
