@@ -51,6 +51,7 @@ function theme()
    echo "<script>document.body.style.backgroundColor = '" . $code[$number[0][0]] . "';</script>";
 }
 
+
 if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
    $getid = intval($_GET['id_user']);
    $requser = $bdd->prepare('SELECT * FROM user WHERE id_user = ?');
@@ -67,6 +68,7 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
                <div class="six columns">
                <a href="index.php"><img id="logo" src="/tweetacademiee.png" alt="logo" style="width:50%"></a>
                </div>
+
                <div class="six columns right_menu">
                   <a href="edit-profil.php" style="color:white">Editer mon profil</a>
                   <a href="deconnexion.php" style="color:white">Se déconnecter</a>
@@ -134,25 +136,31 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
                         </form>
                     </div>
                     <hr>
+                    
                     <div class="timeline">
 
                     <?php 
-                    if (isset($_SESSION['id_user'])) {
-                        $reponse = $bdd->prepare("SELECT * FROM user INNER JOIN follow ON follow.id_follower = user.id_user AND follow.id_followed = user.id_user WHERE id_user = ?");
-                        $reponse->execute(array($_SESSION['id_user']));
 
-                        while($donnees = $reponse->fetch())
+                    // include('poo_tweet.php');
+
+                    if (isset($_SESSION['id_user'])) 
+                    {
+                        $following = $bdd->prepare('SELECT * FROM user INNER JOIN follow ON follow.id_follower = user.id_user WHERE follow.id_followed = ?');
+                        $following->execute(array($getid));
+                        while($donnees = $following->fetch())
                         {
-                            echo "<div class='affprofil'>" .
-                                    "<div class='photo'>" . 
-                                        "<img alt='pp' id='pp_tweet' src='/photos/". $donnees['profile_picture']. "'> 
-                                    </div>".
-                                    "<div class='infos'>" .
-                                        "<h4><b><a href=\"profil.php?id_user=". $donnees['id_user']. "\">". 
+                            echo "<div class='affprofil'>
+                                    <div class='photo'>
+                                        <img alt='pp' id='pp_tweet' src='/photos/". $donnees['profile_picture']. "'> 
+                                    </div>
+                                    <div class='infos'>
+                                        <h4><b><a href='profil.php?id_user=". $donnees['id_user']. "'>". 
                                     $donnees['pseudo'] . 
-                                    "</a></b></h4>". "<br/>" . 
-                                    "<br/>" . 
-                                "</div></div>";
+                                    "</a></b></h4>
+                                    <br/>
+                                    <br/>
+                                    </div>
+                                </div>";
                         }
                     }
                     ?>
@@ -173,6 +181,7 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
 
          </div>
          <?php theme(); ?>
+      </div>
    </body>
 
    <script type="text/javascript" src="auto-refresh.js"></script>
