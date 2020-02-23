@@ -51,6 +51,7 @@ function theme()
    echo "<script>document.body.style.backgroundColor = '" . $code[$number[0][0]] . "';</script>";
 }
 
+
 if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
    $getid = intval($_GET['id_user']);
    $requser = $bdd->prepare('SELECT * FROM user WHERE id_user = ?');
@@ -140,15 +141,14 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
 
                     <?php 
 
-                    include('poo_tweet.php');
+                    // include('poo_tweet.php');
 
                     if (isset($_SESSION['id_user'])) 
                     {
-                        $following = $bdd->query('SELECT * FROM user INNER JOIN follow ON follow.id_follower = user.id_user AND follow.id_followed = user.id_user WHERE id_user = ?');
-
+                        $following = $bdd->prepare('SELECT * FROM user INNER JOIN follow ON follow.id_followed = user.id_user WHERE follow.id_follower = ?');
+                        $following->execute(array($getid));
                         while($donnees = $following->fetch())
                         {
-                            echo "ok";
                             echo "<div class='affprofil'>
                                     <div class='photo'>
                                         <img alt='pp' id='pp_tweet' src='/photos/". $donnees['profile_picture']. "'> 

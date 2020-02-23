@@ -101,8 +101,8 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
                            <div class="ten columns infos" style="align-self: center">
                               <p><?php echo $userinfo['bio']; ?> </p>
                               <p> Contact : <?php echo $userinfo['email']; ?> </p>
-                              <a href="abonnements.php?id_user=<?= $_SESSION['id_user'] ?>">Abonnements</a>
-                              <a href="abonnes.php?id_user=<?= $_SESSION['id_user'] ?>">Abonnés</a>
+                              <a href="abonnements.php?id_user=<?= $_GET['id_user'] ?>">Abonnements</a>
+                              <a href="abonnes.php?id_user=<?= $_GET['id_user'] ?>">Abonnés</a>
 
                            </div>
                         </div>
