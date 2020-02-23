@@ -46,7 +46,7 @@
         <div class="header_ban">
             <div class="row">
                 <div class="six columns">
-                    <a href="index.php"><img id="logo" src="/twitter-logo.png" alt="logo" style="width:30%"></a>
+                    <a href="index.php"><img id="logo" src="/tweetacademiee.png" alt="logo" style="width:50%"></a>
                 </div>
                 <div class="six columns right_menu">
                     <a href="deconnexion.php" style="color:white">Se déconnecter</a>
@@ -61,7 +61,6 @@
                     <div class="left_menu">
                         <a href="index.php"><img src="/MISC/home.png" alt="Accueil"></a>
                         <a href=""><img src="/MISC/hashtag.png" alt="#Explorer"></a>
-                        <a href=""><img src="/MISC/notif.png" alt="Notifications"></a>
                         <a href=""><img src="/MISC/message.png" alt="Message"></a>
                         <a href="profil.php?id_user=<?= $_SESSION['id_user'] ?>"><img src="/MISC/profil.png" alt="Profil"></a>
                     </div>
@@ -72,12 +71,18 @@
 
                 <div class="eight columns center">
                     <div class="add_tweet">
-                        <img src="femme_sourire.jpg" alt="pp">
+                    <?php echo '<img alt="pp" id="pp_tweet" src="/photos/'.$user['profile_picture']. '">' ?>
                         <form enctype="multipart/form-data" action="" name="twitter" method="post">
                                 <textarea id="tweet" placeholder="Quoi de neuf ?" name="tweet" rows="10" cols="50"></textarea>
                                 <br />
-                            <input type="file" name="photo"/>
-                            <input id="button" type="submit" name="envoyer" value="Envoyer">
+                            <div class="row">
+                                <div class="six columns">
+                                    <input type="file" name="photo"/>
+                                </div>
+                                <div class="six columns" style="text-align: right">
+                                    <input id="button" type="submit" name="envoyer" value="Envoyer">
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <hr>
@@ -90,11 +95,11 @@
                 </div>
 
 
-                <div class="two columns search">
+                <div class="three columns search">
                     <div class="search_leftarea">
-                        <form action="search-tag.php" method="get">
+                        <form action="search-tag.php" method="get" style="padding-bottom: 0px;">
                             <input type="search" placeholder="Rechercher..." id="site-search" name="terme" aria-label="Search through site content">
-                            <input type="submit" name="s" value="GO"> 
+                            <input type="submit" id="button" name="s" value="GO"> 
                         </form>
                     </div>
                 </div>
@@ -114,5 +119,4 @@
 } else {
    header("Location: connexion.php");
 }
-
 ?>

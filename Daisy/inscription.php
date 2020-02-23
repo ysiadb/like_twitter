@@ -89,8 +89,16 @@ if(isset($_POST['forminscription'])) {
 
 <body>
     <div class="container">
-        <div class="header_ban">
-            <a href="index.php"><img id="logo" src="/twitter-logo.png" alt="logo"></a>
+    <div class="header_ban">
+                <div class="row">
+                    <div class="six columns">
+                        <a href="index.php"><img id="logo" src="/tweetacademiee.png" alt="logo" style="width:50%"></a>
+                    </div>
+                    <div class="six columns right_menu">
+                        <a href="connexion.php" style="color:white">Se connecter</a>
+
+                    </div>
+                </div>
         </div>
         <section class="formulaire">
 

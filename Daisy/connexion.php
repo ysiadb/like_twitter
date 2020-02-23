@@ -67,8 +67,19 @@
 <body>
     <div class="container">
         <div class="header_ban">
-        <a href="index.php"><img id="logo" src="/twitter-logo.png" alt="logo"></a>
+                <div class="row">
+                    <div class="six columns">
+                        <a href="index.php"><img id="logo" src="/tweetacademiee.png" alt="logo" style="width:50%"></a>
+                    </div>
+                    <div class="six columns right_menu">
+                        <a href="inscription.php" style="color:white">S'inscrire</a>
+
+                    </div>
+                </div>
         </div>
+
+
+
         <section class="formulaire">
 
             <h2 style="margin-top: 2%;">Connexion</h2>

@@ -24,7 +24,7 @@ function theme()
    $theme->execute(array($_SESSION['id_user']));
    $number = $theme->fetchAll();
 
-   $code = ['#bdc3c7', '#1abc9c', '#f1c40f', '#40d47e'];
+   $code = ['#ffffff', '#1abc9c', '#f1c40f', '#40d47e'];
    echo "<script>document.body.style.backgroundColor = '" . $code[$number[0][0]] . "';</script>";
 }
 

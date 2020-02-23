@@ -1,6 +1,7 @@
 body
 {
     background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .menu button
@@ -13,12 +14,17 @@ body
 
 .search
 {
-    padding-right: 5%;
+    padding-right: 10px;
 }
 
 .search_leftarea form
 {
     display: flex;
+    margin-left: 5%;
+    margin-top: 2%;
+    background-color: black;
+    padding: 5%;
+    border-radius: 20px;
     
 }
 
@@ -27,6 +33,7 @@ body
     text-align: center;
     color: white;
     background-color:#33ccff;
+    margin-left: 2%;
 }
 
 
@@ -40,7 +47,7 @@ body
 
 .menu
 {
-    display: list-item;
+    display: block;
 }
 
 .row
@@ -48,6 +55,10 @@ body
     display: flex;
 }
 
+    .profil_header
+    {
+        box-shadow:  0 2px 1em grey;
+    }
 
 .tweet_edit
 {
@@ -58,11 +69,12 @@ body
 
 .add_tweet
 {
-    border-radius: 3%;
+    border-radius: 10px;
     border: 1px solid rgb(216, 216, 216);
     padding: 1%;
     background-color: white;
     width: 100%;
+    box-shadow: 0 0 7px black;
 }
 
     .add_tweet button
@@ -74,7 +86,8 @@ body
     
     .add_tweet img
     {
-        width: 7%;
+        width: 50px;
+        height: 50px;
         border: 1px solid (216, 216, 216);
         border-radius: 50%;
     }
@@ -83,34 +96,55 @@ body
 {
     height: auto;
     background-color:#33ccff;
+    box-shadow:  0 2px 1em grey;
 }
 
 .header_ban img
 {
     text-align: left;
-    width: 15%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
-
 .formulaire
 {
     display: grid;
     text-align: center;
     justify-content: center;
-    border-radius: 5%;
+    border-radius: 5px;
 }
 
     .formulaire form
     {
         border: 1px solid rgb(218, 218, 218);
-        border-radius: 5%;
+        border-radius: 5px;
         padding: 20px;
     }
 
 #pp
 {
-    width: 7%;
-    border: 1px solid (216, 216, 216);
+    width: 150px;
+    height: 150px;
+    border: 2px solid black;
     border-radius: 50%;
+    margin-right: 10px;
+}
+    #infos
+    {
+        margin-right: 10px;
+    }
+
+#pp_tweet
+{
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#site-search
+{
+    width: 100%;
 }
 
 .columns.right_menu
@@ -143,6 +177,8 @@ a
     text-align: center;
     color: white;
     background-color:#33ccff;
+    /* padding: 1%; */
+    margin-left: 2%;
 }
 
 textarea 
@@ -150,17 +186,6 @@ textarea
     min-width: 100%;
     border: 1px solid white;
 }
-
-
-
-.afftweet
-{
-    border: solid 2px;
-    /* width: 50%; */
-    background-color: white;
-
-}
-
 
 .message img
 {
@@ -170,7 +195,11 @@ textarea
 }
 
 
-
+#bioarea
+{
+    width: 100%;
+    height: auto;
+}
 
 
 
@@ -184,20 +213,26 @@ input
 
 .afftweet
 {
-    border: solid 1px;
+    border: solid 0.5px rgb(218, 218, 218);
+    background-color: white;
     padding: 1%;
+    border-radius: 10px;
 }
 
 .affprofil
 {
+    display: flex;
     font-size: medium;
-    border-bottom: solid 1px;
     text-align: left;
 }
+    .infos
+    {
+        align-self: center;
+        margin-left: 10px;
+    }
 
 .horaire
 {
-    border-top: solid 1px;
     font-size: small;
     text-align: right;
 }
