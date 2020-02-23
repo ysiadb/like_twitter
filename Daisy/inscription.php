@@ -45,8 +45,8 @@ if(isset($_POST['forminscription'])) {
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $mail = htmlspecialchars($_POST['email']);
     $mail2 = htmlspecialchars($_POST['email2']);
-    $password = hash('ripemd160', $_POST['password']);
-    $password2 = hash('ripemd160',$_POST['password2']);
+    $password = hash('ripemd160', $_POST['password'] . "vive le projet tweet_academy");
+    $password2 = hash('ripemd160',$_POST['password2']. "vive le projet tweet_academy");
     if(!empty($_POST['name']) AND !empty($_POST['surname']) AND !empty($_POST['pseudo']) AND !empty($_POST['email']) AND !empty($_POST['email2']) AND !empty($_POST['password']) AND !empty($_POST['password2'])) {
       $pseudolength = strlen($pseudo);
       if($pseudolength <= 255) {

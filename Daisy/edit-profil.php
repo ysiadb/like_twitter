@@ -70,8 +70,8 @@ if (isset($_SESSION['id_user'])) {
    }
 
    if (isset($_POST['newmdp1']) and !empty($_POST['newmdp1']) and isset($_POST['newmdp2']) and !empty($_POST['newmdp2'])) {
-      $mdp1 = hash('ripemd160', $_POST['newmdp1']. "vive le tweet academy");
-      $mdp2 = hash('ripemd160', $_POST['newmdp2']);
+      $mdp1 = hash('ripemd160', $_POST['newmdp1']. "vive le projet tweet_academy");
+      $mdp2 = hash('ripemd160', $_POST['newmdp2']. "vive le projet tweet_academy");
       if ($mdp1 == $mdp2) {
          $insertmdp = $bdd->prepare("UPDATE user SET password = ? WHERE id_user = ?");
          $insertmdp->execute(array($mdp1, $_SESSION['id_user']));

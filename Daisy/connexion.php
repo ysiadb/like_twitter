@@ -43,7 +43,7 @@
 
     if(isset($_POST['formconnexion'])) {
         $emailconnect = htmlspecialchars($_POST['emailconnect']);
-        $passwordconnect = hash('ripemd160', $_POST['passwordconnect']);
+        $passwordconnect = hash('ripemd160', $_POST['passwordconnect']. "vive le projet tweet_academy");
         if(!empty($emailconnect) AND !empty($passwordconnect)) {
            $requser = $bdd->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
            $requser->execute(array($emailconnect, $passwordconnect));
