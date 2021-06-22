@@ -11,10 +11,10 @@
    <!-- CSS 
     ______________________________-->
 
-   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="./css/style.css">
    <link rel="stylesheet" href="https://use.typekit.net/gsh6pdg.css">
-   <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-   <link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+   <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+   <link rel="stylesheet" type="text/css" href="./css/skeleton.css">
 
    <!-- MOBILE SPECIFIC METAS 
     ______________________________-->
@@ -66,7 +66,7 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
          <div class="header_ban">
             <div class="row">
                <div class="six columns">
-               <a href="index.php"><img id="logo" src="/tweetacademiee.png" alt="logo" style="width:50%"></a>
+               <a href="index.php"><img id="logo" src="./tweetacademiee.png" alt="logo" style="width:50%"></a>
                </div>
 
                <div class="six columns right_menu">
@@ -77,14 +77,14 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
             </div>
          </div>
 
-         <div class="row">
+         <div class="row main">
 
             <div class="one column menu">
-               <div class="left_menu">
-                  <a href="index.php"><img src="/MISC/home.png" alt="Accueil"></a>
-                  <a href=""><img src="/MISC/hashtag.png" alt="#Explorer"></a>
-                  <a href=""><img src="/MISC/message.png" alt="Message"></a>
-                  <a href="profil.php?id_user=<?= $_SESSION['id_user'] ?>"><img src="/MISC/profil.png" alt="Profil"></a>
+            <div class="left_menu">
+                  <a href="index.php"><img src="./MISC/home.png" alt="Accueil"> Accueil</a>
+                  <a href=""><img src="./MISC/hashtag.png" alt="#Explorer"> Explorer</a>
+                  <a href=""><img src="./MISC/message.png" alt="Message"> Message</a>
+                  <a href="profil.php?id_user=<?= $_SESSION['id_user'] ?>"> <img src="./MISC/profil.png" alt="Profil">Profil</a>
                </div>
                <button method="get" name="t" value="Tweeter">Tweeter</button>
             </div>
@@ -97,13 +97,14 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
                      <div class="info">
                         <div class="row">
                            <div class="two columns">
-                              <?php echo '<img alt="pp" id="pp" src="/photos/'.$userinfo['profile_picture']. '">' ?>
+                              <?php echo '<img alt="pp" id="pp" src="./photos/'.$userinfo['profile_picture']. '">' ?>
 
                            </div>
-                           <div class="ten columns infos" style="align-self: center">
+                           <div class="ten columns infoss" style="align-self: center">
                               <p><?php echo $userinfo['bio']; ?> </p>
                               <p> Contact : <?php echo $userinfo['email']; ?> </p>
-
+                              <a href="abonnements.php?id_user=<?= $_GET['id_user'] ?>">Abonnements</a>
+                              <a href="abonnes.php?id_user=<?= $_GET['id_user'] ?>">Abonnés</a>
                            </div>
                         </div>
                      </div>
@@ -121,7 +122,7 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
                      }
                      ?>
                     <div class="add_tweet">
-                    <?php echo '<img alt="pp" src="/photos/'.$userinfo['profile_picture']. '">' ?>
+                    <?php echo '<img alt="pp" src="./photos/'.$userinfo['profile_picture']. '">' ?>
                         <form enctype="multipart/form-data" action="" name="twitter" method="post">
                                 <textarea id="tweet" placeholder="Quoi de neuf ?" name="tweet" rows="10" cols="50"></textarea>
                                 <br />
@@ -151,9 +152,9 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
                         {
                             echo "<div class='affprofil'>
                                     <div class='photo'>
-                                        <img alt='pp' id='pp_tweet' src='/photos/". $donnees['profile_picture']. "'> 
+                                        <img alt='pp' id='pp_tweet' src='./photos/". $donnees['profile_picture']. "'> 
                                     </div>
-                                    <div class='infos'>
+                                    <div class='infoss'>
                                         <h4><b><a href='profil.php?id_user=". $donnees['id_user']. "'>". 
                                     $donnees['pseudo'] . 
                                     "</a></b></h4>
@@ -184,7 +185,10 @@ if (isset($_GET['id_user']) and $_GET['id_user'] > 0) {
       </div>
    </body>
 
-   <script type="text/javascript" src="auto-refresh.js"></script>
-</html>
+   <script type="text/javascript">
+   setTimeout(function() {
+  location.reload();
+}, 30000);
+    </script></html>
 
 <?php } ?>

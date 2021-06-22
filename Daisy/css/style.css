@@ -1,140 +1,144 @@
-body
-{
+html {
+    overflow: hidden;
+}
+
+body {
     background-color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.menu button
-{
+.main {
+    margin-top: 134px;
+}
+
+.menu button {
     text-align: center;
     color: white;
-    background-color:#33ccff;
+    background-color: #33ccff;
     margin-top: 15px;
 }
 
-.search
-{
+.search {
     padding-right: 10px;
 }
 
-.search_leftarea form
-{
+.search_leftarea form {
     display: flex;
     margin-left: 5%;
     margin-top: 2%;
-    background-color: black;
+    /* background-color: black; */
     padding: 5%;
     border-radius: 20px;
-    
+
 }
 
-.search_leftarea button
-{
+.search_leftarea button {
     text-align: center;
     color: white;
-    background-color:#33ccff;
+    background-color: #33ccff;
     margin-left: 2%;
+    border: none;
 }
 
+#buttong {
+    border: none !important;
+}
 
-
-.center
-{
-    border-left: 1px solid grey;
-    border-right: 1px solid grey ;
+.center {
+    /* border-left: 1px solid grey;
+    border-right: 1px solid grey ; */
     padding: 3%;
+    height: 100vh;
+    overflow: scroll;
+    padding-left: 155px;
+    padding-right: 155px;
 }
 
-.menu
-{
+.menu {
     display: block;
 }
 
-.row
-{
+.row {
     display: flex;
 }
 
-    .profil_header
-    {
-        box-shadow:  0 2px 1em grey;
-    }
+.profil_header {
+    box-shadow: 0 2px 1em grey;
+}
 
-.tweet_edit
-{
+.tweet_edit {
     height: 50px;
     width: auto;
 }
 
 
-.add_tweet
-{
+.add_tweet {
     border-radius: 10px;
     border: 1px solid rgb(216, 216, 216);
-    padding: 1%;
+    padding: 15px;
     background-color: white;
     width: 100%;
-    box-shadow: 0 0 7px black;
+    box-shadow: 0 15px 9px -1.1em gray;
 }
 
-    .add_tweet button
-    {
-        text-align: center;
-        color: white;
-        background-color:#33ccff;
-    }
-    
-    .add_tweet img
-    {
-        width: 50px;
-        height: 50px;
-        border: 1px solid (216, 216, 216);
-        border-radius: 50%;
-    }
+.add_tweet button {
+    text-align: center;
+    color: white;
+    background-color: #33ccff;
+}
 
-.header_ban
-{
+.add_tweet img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid (216, 216, 216);
+    border-radius: 50%;
+}
+
+.header_ban {
     height: auto;
-    background-color:#33ccff;
-    box-shadow:  0 2px 1em grey;
+    /* background-color:#33ccff; */
+    /* box-shadow:  0 2px 1em grey; */
+    box-shadow: 0 -7px 8px 0.5em gray;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(5, 76, 107);
+    background: linear-gradient(90deg, rgba(5, 76, 107, 1) 0%, rgba(30, 173, 176, 1) 35%, rgba(199, 246, 255, 1) 100%);
 }
 
-.header_ban img
-{
+.header_ban img {
     text-align: left;
     padding-top: 2%;
     padding-bottom: 2%;
 }
-.formulaire
-{
+
+.formulaire {
     display: grid;
     text-align: center;
     justify-content: center;
     border-radius: 5px;
 }
 
-    .formulaire form
-    {
-        border: 1px solid rgb(218, 218, 218);
-        border-radius: 5px;
-        padding: 20px;
-    }
+.formulaire form {
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+    padding: 20px;
+}
 
-#pp
-{
+#pp {
     width: 150px;
     height: 150px;
     border: 2px solid black;
     border-radius: 50%;
     margin-right: 10px;
 }
-    #infos
-    {
-        margin-right: 10px;
-    }
 
-#pp_tweet
-{
+#infos {
+    margin-right: 10px;
+}
+
+#pp_tweet {
     width: 50px;
     height: 50px;
     border: 1px solid black;
@@ -142,102 +146,121 @@ body
     padding: 5px;
 }
 
-#site-search
-{
+#site-search {
     width: 100%;
 }
 
-.columns.right_menu
-{
+.columns.right_menu {
     text-align: right;
     align-self: center;
 }
 
 
-.left_menu > a > img{
-    width: 50%;
+.left_menu a img {
+    width: 30px;
     border-radius: 50%;
+    margin-right: 15px;
+}
+
+.left_menu a {
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 24px;
 }
 
 
-.menu
-{
+.menu {
     text-align: center;
     margin-top: 20px;
 }
 
-a
-{
+a {
     margin: 2%;
     text-decoration: none;
 }
 
-#button 
-{
+#button {
     text-align: center;
     color: white;
-    background-color:#33ccff;
+    background-color: #33ccff;
     /* padding: 1%; */
     margin-left: 2%;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 50px;
 }
 
-textarea 
-{
+textarea {
     min-width: 100%;
     border: 1px solid white;
+    padding-bottom: 20px !important;
+    min-height: 85px !important;
 }
 
-.message img
-{
+.message img {
     width: 50%;
     height: auto;
     text-align: center;
 }
 
 
-#bioarea
-{
+#bioarea {
     width: 100%;
     height: auto;
 }
 
+#compteur {
+    position: relative;
+    top: -41px;
+    right: 15px;
+}
 
+.addpic {
+    margin-top: -50px;
+}
 
 /* ---------------------MANEL------------------------ */
 
 
-input
-{
+input {
     display: block;
 }
 
-.afftweet
-{
+.afftweet {
     border: solid 0.5px rgb(218, 218, 218);
     background-color: white;
     padding: 1%;
     border-radius: 10px;
 }
 
-.affprofil
-{
+.affprofil {
     display: flex;
     font-size: medium;
     text-align: left;
 }
-    .infos
-    {
-        align-self: center;
-        margin-left: 10px;
-    }
 
-.horaire
-{
+.infos {
+    align-self: center;
+    margin-left: 10px;
+    width: 327px;
+display: flex;
+align-items: center;
+}
+
+.infoss {
+    margin-left: 50px;
+}
+
+p{
+    margin-bottom: 0 !important;
+}
+
+.horaire {
     font-size: small;
     text-align: right;
 }
 
-.tweetimage
-{
+.tweetimage {
     text-align: center;
 }

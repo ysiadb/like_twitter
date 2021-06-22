@@ -9,7 +9,6 @@
 
 
      $getfollowedid = intval($_GET['id_followed']);
-     var_dump($getfollowedid);
      $suiveur = $_SESSION['id_user'];
      $suivi = $_GET['id_user'];
 

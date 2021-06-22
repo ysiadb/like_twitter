@@ -10,10 +10,10 @@
     <!-- CSS 
     ______________________________-->
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" href="https://use.typekit.net/gsh6pdg.css">
-    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./css/skeleton.css">
 
     <!-- MOBILE SPECIFIC METAS 
     ______________________________-->
@@ -45,8 +45,8 @@ if(isset($_POST['forminscription'])) {
     $pseudo = htmlspecialchars($_POST['pseudo']);
     $mail = htmlspecialchars($_POST['email']);
     $mail2 = htmlspecialchars($_POST['email2']);
-    $password = hash('ripemd160', $_POST['password'] . "vive le projet tweet_academy");
-    $password2 = hash('ripemd160',$_POST['password2']. "vive le projet tweet_academy");
+    $password = hash('ripemd160', $_POST['password']);
+    $password2 = hash('ripemd160',$_POST['password2']);
     if(!empty($_POST['name']) AND !empty($_POST['surname']) AND !empty($_POST['pseudo']) AND !empty($_POST['email']) AND !empty($_POST['email2']) AND !empty($_POST['password']) AND !empty($_POST['password2'])) {
       $pseudolength = strlen($pseudo);
       if($pseudolength <= 255) {
@@ -59,11 +59,6 @@ if(isset($_POST['forminscription'])) {
                   if($password == $password2) {
                      $insertmbr = $bdd->prepare("INSERT INTO user(name, surname, pseudo, email, password) VALUES(?, ?, ?, ?, ?)");
                      $insertmbr->execute(array($name, $surname, $pseudo, $mail, $password));
-                    // var_dump($_POST['name']);
-                    // var_dump($_POST['surname']);
-                    // var_dump($_POST['pseudo']);
-                    // var_dump($_POST['email']);
-                    // var_dump($_POST['password']);
                      $erreur = "Votre compte a bien été créé ! <a href=\"connexion.php\">Me connecter</a>";
                   } else {
                      $erreur = "Vos mots de passes ne correspondent pas !";

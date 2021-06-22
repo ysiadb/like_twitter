@@ -196,8 +196,11 @@
     ?>
 
 </body>
-<script type="text/javascript" src="auto-refresh.js"></script>
-
+<script type="text/javascript">
+   setTimeout(function() {
+  location.reload();
+}, 30000);
+    </script>
 </html>
 
 <?php
